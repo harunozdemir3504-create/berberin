@@ -97,23 +97,58 @@
   }
 
   const markReady = () => heroMedia.classList.add('is-ready');
-  const tryPlay = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
+  const tryPlay = () => {
+    video.muted = true;
+    video.defaultMuted = true;
+    const p = video.play();
+    if (p && p.catch) p.catch(() => {});
+  };
 
   function setupReel() {
-    const useMobile = portraitScreen && hero.mobile;
-    const sources = useMobile ? [{ src: hero.mobile, type: 'video/mp4' }] : (hero.sources || []);
-    if (!sources.length) return;
-    if (hero.poster) video.poster = hero.poster;
-    sources.forEach((s) => {
-      const el = document.createElement('source');
-      el.src = s.src; el.type = s.type;
-      video.appendChild(el);
-    });
+    const fallbackSrc = (hero.sources && hero.sources[0] && hero.sources[0].src) || null;
+    const primarySrc = (portraitScreen && hero.mobile) ? hero.mobile : fallbackSrc;
+    if (!primarySrc) return;
+
+    // iOS Safari & Android Chrome autoplay uyumluluğu için tüm bayraklar
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+    video.autoplay = true;
     video.loop = true;
-    heroKB.classList.add('kb-loop');
+    video.preload = 'auto';
+    video.setAttribute('muted', '');
+    video.setAttribute('playsinline', '');
+    video.setAttribute('webkit-playsinline', '');
+    video.setAttribute('autoplay', '');
+    if (hero.poster) video.poster = hero.poster;
+
+    let triedFallback = false;
+    video.addEventListener('error', () => {
+      if (!triedFallback && fallbackSrc && video.src.indexOf(fallbackSrc) === -1) {
+        triedFallback = true;
+        video.src = fallbackSrc;
+        video.load();
+        tryPlay();
+      }
+    });
+
+    const revealVideo = () => { markReady(); tryPlay(); };
+    video.addEventListener('loadeddata', revealVideo, { once: true });
+    video.addEventListener('canplay', revealVideo, { once: true });
     video.addEventListener('playing', markReady, { once: true });
+
+    video.src = primarySrc;
     video.load();
     tryPlay();
+
+    // Pil/veri tasarrufu modunda ilk autoplay engellenirse ilk dokunuşta veya kaydırmada başlat
+    const unlock = () => { tryPlay(); if (!video.paused) markReady(); };
+    ['touchstart', 'pointerdown', 'scroll'].forEach((ev) => {
+      window.addEventListener(ev, unlock, { once: true, passive: true });
+    });
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden && video.paused) tryPlay();
+    });
   }
 
   class SegmentPlayer {
@@ -286,10 +321,9 @@
     }
   }
 
-  if (!reduceMotion && !saveData) {
-    if (hero.mode === 'reel') setupReel();
-    else if (hero.mode === 'segments') setupSegments();
-  }
+  // Mobilde pil tasarrufu / saveData olsa bile showreel oynatılsın
+  if (hero.mode === 'reel') setupReel();
+  else if (hero.mode === 'segments' && !reduceMotion) setupSegments();
 
   /* =========================================================
      USTA PORTRAIT

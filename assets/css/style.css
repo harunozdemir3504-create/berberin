@@ -158,13 +158,55 @@ body::before { /* global subtle vignette + texture */
 @keyframes breathe { 0%,100% { transform: scale(.88); opacity: .55; } 50% { transform: scale(1.08); opacity: 1; } }
 
 @media (max-width: 1023px) {
-  :root { --mcta-h: calc(72px + env(safe-area-inset-bottom)); }
-  .corner { width: 40px; height: 40px; }
-  .corner-tl, .corner-tr { top: 8px; }
-  .corner-tl, .corner-bl { left: 8px; } .corner-tr, .corner-br { right: 8px; }
-  .glow { width: 300px; height: 300px; }
-  .glow-tl { top: -150px; left: -150px; } .glow-tr { top: -170px; right: -170px; }
-  .glow-bl { bottom: calc(-170px + var(--mcta-h)); left: -170px; } .glow-br { bottom: calc(-150px + var(--mcta-h)); right: -150px; }
+  :root { --nav-h: 62px; --mcta-h: calc(64px + env(safe-area-inset-bottom)); }
+  .corner { width: 24px; height: 24px; opacity: .65; }
+  .corner::before { height: 1px; }
+  .corner::after { width: 1px; }
+  .corner-tl, .corner-tr { top: 6px; }
+  .corner-tl, .corner-bl { left: 6px; } .corner-tr, .corner-br { right: 6px; }
+  .glow { width: 200px; height: 200px; opacity: .45; }
+  .glow-tl { top: -110px; left: -110px; } .glow-tr { top: -120px; right: -120px; }
+  .glow-bl { bottom: calc(-120px + var(--mcta-h)); left: -120px; } .glow-br { bottom: calc(-110px + var(--mcta-h)); right: -110px; }
+}
+
+@media (max-width: 639px) {
+  .section { padding: 3rem 0; }
+  .eyebrow { font-size: .62rem; letter-spacing: .32em; gap: .6rem; }
+  .eyebrow::before, .eyebrow.justify-center::after { width: 22px; }
+  .section-title { font-size: 1.7rem; margin-top: .7rem; }
+  .section-lead { font-size: .9rem; margin-top: .8rem; line-height: 1.6; }
+  .menu-btn { width: 38px; height: 38px; border-radius: 8px; }
+  .menu-btn span { width: 16px; }
+  .btn-xl { padding: .85rem 1.35rem; font-size: .72rem; }
+  .btn-gold, .btn-ghost { padding: .8rem 1.25rem; font-size: .7rem; letter-spacing: .11em; }
+  .tag-pill { padding: .42rem .85rem; font-size: .74rem; }
+  .lux-card { border-radius: 16px; }
+  .service-card { padding: 1.35rem 1.25rem; }
+  .svc-icon { width: 38px; height: 38px; margin-top: 1.1rem; }
+  .svc-title { margin-top: .95rem; font-size: 1.05rem; }
+  .svc-text { margin-top: .55rem; font-size: .85rem; line-height: 1.55; }
+  .svc-tags { margin-top: .85rem; }
+  .svc-tags li { font-size: .6rem; padding: .24rem .5rem; }
+  .svc-link { padding-top: 1.1rem; font-size: .66rem; }
+  .svc-link svg { width: 32px; height: 32px; padding: 8px; }
+  .portrait-frame { border-radius: 16px; }
+  .portrait-frame > img { border-radius: 16px; }
+  .portrait-badge { right: 10px; bottom: 10px; padding: 8px 12px; border-radius: 10px; }
+  .value-item { padding: .75rem .6rem; gap: .45rem; font-size: .72rem; align-items: center; text-align: center; border-radius: 12px; }
+  .value-item svg { width: 22px; height: 22px; }
+  .bento { grid-auto-rows: 118px; gap: 8px; }
+  .tile { border-radius: 12px; }
+  .tile-cap { left: 10px; right: 10px; bottom: 8px; }
+  .tile-cap b { font-size: .76rem; }
+  .tile-cap small { font-size: .52rem; }
+  .tile-ico { width: 26px; height: 26px; }
+  .tile-ico svg { width: 11px; height: 11px; }
+  .map-frame { min-height: 250px; border-radius: 16px; }
+  .map-frame iframe, .map-tint { border-radius: 16px; }
+  .cta-band { border-radius: 18px; padding: 1.6rem 1.25rem; }
+  .mobile-cta { padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); gap: 8px; }
+  .mobile-cta a { height: 46px; border-radius: 12px; font-size: .72rem; }
+  .brackets::after { --s: 15px; }
 }
 
 /* Reusable bracket corners for frames/cards */
@@ -187,8 +229,8 @@ body::before { /* global subtle vignette + texture */
 /* ---------- HERO ---------- */
 .hero-media { position: absolute; inset: 0; overflow: hidden; background: var(--ink); }
 .hero-kb { position: absolute; inset: 0; will-change: transform; }
-.hero-kb.kb-loop { animation: kenburns 26s ease-in-out infinite alternate; }
-@keyframes kenburns { 0% { transform: scale(1.0) translate3d(0,0,0); } 100% { transform: scale(1.045) translate3d(-0.6%, -0.4%, 0); } }
+.hero-kb.kb-loop { animation: none; }
+@keyframes kenburns { 0% { transform: scale(1.0) translate3d(0,0,0); } 100% { transform: scale(1.03) translate3d(0, 0, 0); } }
 .hero-video { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.1s ease; }
 .hero-media.is-ready .hero-video { opacity: 1; }
 .hero-media.is-ready .hero-video.is-dim { opacity: 0; transition-duration: .85s; }
