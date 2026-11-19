@@ -2,6 +2,7 @@ node_modules/
 raw-media/videos/*
 raw-media/photos/*
 raw-media/clips/*
+raw-media/_archive/
 !raw-media/**/.gitkeep
 .DS_Store
 Thumbs.db
