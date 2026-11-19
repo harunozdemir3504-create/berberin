@@ -9,7 +9,7 @@
   <meta name="theme-color" content="#060608" />
   <meta name="geo.region" content="TR-35" />
   <meta name="geo.placename" content="Bornova, İzmir" />
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
@@ -146,26 +146,28 @@
 
   <!-- ============ HEADER ============ -->
   <header id="siteNav" class="nav fixed inset-x-0 top-0 z-50">
-    <div class="mx-auto flex h-[62px] max-w-7xl items-center justify-between gap-3 px-4 sm:h-[76px] sm:gap-4 sm:px-8">
+    <div class="mx-auto flex h-[60px] max-w-7xl items-center justify-between gap-2 px-3.5 sm:h-[74px] sm:gap-4 sm:px-8">
       <a href="#top" class="brand group flex items-center gap-2.5 sm:gap-3" aria-label="Berberinn – Ana sayfa">
-        <svg class="brand-mark h-9 w-9 shrink-0 sm:h-12 sm:w-12" aria-hidden="true"><use href="#logo-mark" /></svg>
+        <span class="brand-emblem">
+          <img src="assets/img/berber-logo.webp" alt="Berberinn Logo" width="46" height="46" />
+        </span>
         <span class="flex flex-col leading-none">
-          <span class="brand-name text-gold-metal font-display text-[1.12rem] font-bold tracking-[0.12em] sm:text-[1.55rem]">BERBERİNN</span>
-          <span class="brand-line my-[4px] sm:my-[5px]"></span>
-          <span class="brand-sub text-[0.48rem] font-medium uppercase tracking-[0.34em] text-[#cfc6ad] sm:text-[0.62rem] sm:tracking-[0.42em]">by Hakan Çetinkaya</span>
+          <span class="brand-name text-gold-metal font-display text-[1.08rem] font-bold tracking-[0.11em] sm:text-[1.48rem]">BERBERİNN</span>
+          <span class="brand-line my-[3.5px] sm:my-[5px]"></span>
+          <span class="brand-sub text-[0.46rem] font-medium uppercase tracking-[0.3em] text-[#cfc6ad] sm:text-[0.6rem] sm:tracking-[0.4em]">by Hakan Çetinkaya</span>
         </span>
       </a>
 
-      <nav class="hidden items-center gap-9 text-[0.78rem] font-medium uppercase tracking-[0.22em] text-white/70 lg:flex" aria-label="Ana menü">
+      <nav class="hidden items-center gap-9 text-[0.76rem] font-medium uppercase tracking-[0.22em] text-white/70 lg:flex" aria-label="Ana menü">
         <a class="nav-link" href="#konum">Konum</a>
         <a class="nav-link" href="#ustalik">Ustalık</a>
         <a class="nav-link" href="#hizmetler">Hizmetler</a>
         <a class="nav-link" href="#galeri">Galeri</a>
       </nav>
 
-      <div class="flex items-center gap-3">
-        <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="btn-gold-outline hidden sm:inline-flex">
-          <svg class="h-4 w-4" aria-hidden="true"><use href="#i-calendar" /></svg>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="btn-gold-outline nav-cta">
+          <svg class="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden="true"><use href="#i-calendar" /></svg>
           <span>Randevu Al</span>
         </a>
         <button id="menuBtn" class="menu-btn lg:hidden" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu">
@@ -176,26 +178,24 @@
 
     <!-- Mobile menu -->
     <div id="mobileMenu" class="mobile-menu lg:hidden" hidden>
-      <nav class="flex flex-col px-6 pb-7 pt-2" aria-label="Mobil menü">
-        <a href="#konum">Konum</a>
-        <a href="#ustalik">Ustalık</a>
+      <nav class="flex flex-col px-5 pb-6 pt-1" aria-label="Mobil menü">
+        <a href="#konum">Konum &amp; Yol Tarifi</a>
+        <a href="#ustalik">Usta Hakan Çetinkaya</a>
         <a href="#hizmetler">Hizmetler</a>
         <a href="#galeri">Galeri</a>
-        <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="btn-gold mt-5 justify-center">Randevu Al</a>
+        <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="btn-gold mt-4 justify-center">Hemen Randevu Al</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <!-- ============ HERO ============ -->
-    <section class="hero relative flex min-h-[88svh] items-center justify-center overflow-hidden sm:min-h-[100svh]" aria-label="Berberinn Bornova">
+    <section class="hero relative flex min-h-[82svh] items-end justify-center overflow-hidden sm:min-h-[100svh] sm:items-center" aria-label="Berberinn Bornova">
       <div id="heroMedia" class="hero-media" aria-hidden="true">
-        <!-- Cinematic placeholder (video yokken görünür) -->
         <div class="hero-placeholder">
           <div class="hp-beam hp-beam-1"></div>
           <div class="hp-beam hp-beam-2"></div>
           <div class="hp-orb"></div>
-          <svg class="hp-mark" aria-hidden="true"><use href="#logo-mark" /></svg>
         </div>
         <div id="heroKB" class="hero-kb">
           <video id="heroVideo" class="hero-video" autoplay muted playsinline webkit-playsinline loop preload="auto" disablepictureinpicture></video>
@@ -204,28 +204,24 @@
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="grain" aria-hidden="true"></div>
 
-      <div class="hero-content relative z-10 mx-auto max-w-5xl px-5 pb-14 pt-24 text-center sm:px-6 sm:pb-20 sm:pt-44">
-        <p class="eyebrow justify-center" data-reveal>Bornova · İzmir — Since 1987</p>
-        <h1 class="hero-title mt-4 font-display text-[2.05rem] font-semibold leading-[1.08] tracking-[0.02em] text-white sm:mt-5 sm:text-6xl lg:text-[5.2rem]" data-reveal style="--d:120ms">
-          Bornova'da<br class="sm:hidden" />
-          <span class="text-gold-metal">Tarzın İmzası</span>
+      <div class="hero-content relative z-10 mx-auto w-full max-w-4xl px-4 pb-10 pt-24 text-center sm:px-6 sm:pb-20 sm:pt-36">
+        <span class="hero-pill" data-reveal>Bornova · İzmir <i></i> Since 1987</span>
+        <h1 class="hero-title mt-3.5 font-display text-[1.95rem] font-semibold leading-[1.08] tracking-[0.02em] text-white sm:mt-5 sm:text-6xl lg:text-[5rem]" data-reveal style="--d:100ms">
+          Bornova'da <span class="text-gold-metal">Tarzın İmzası</span>
         </h1>
-        <p class="hero-sub mx-auto mt-4 max-w-2xl font-serif text-[1.08rem] italic leading-relaxed text-white/95 sm:mt-6 sm:text-2xl" data-reveal style="--d:240ms">
-          Usta <span class="not-italic font-semibold text-gold-soft">Hakan Çetinkaya</span>'nın ustalığıyla; milimetrik fade, kusursuz sakal hatları ve size özel tasarlanan bir stil.
+        <p class="hero-sub mx-auto mt-3 max-w-xl font-serif text-[1.02rem] italic leading-snug text-white/95 sm:mt-5 sm:text-2xl sm:leading-relaxed" data-reveal style="--d:200ms">
+          Usta <span class="not-italic font-semibold text-gold-soft">Hakan Çetinkaya</span> dokunuşuyla modern kesim, fade &amp; VIP bakım.
         </p>
-        <div class="mt-7 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4" data-reveal style="--d:360ms">
-          <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="btn-gold btn-xl w-full max-w-[260px] justify-center sm:w-auto sm:max-w-none">
-            <svg class="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true"><use href="#i-calendar" /></svg>
-            <span>Hemen Randevu Al</span>
+        <div class="mx-auto mt-6 grid max-w-[340px] grid-cols-2 gap-2.5 sm:mt-9 sm:flex sm:max-w-none sm:items-center sm:justify-center sm:gap-4" data-reveal style="--d:300ms">
+          <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="btn-gold btn-xl justify-center">
+            <svg class="h-4 w-4 shrink-0 sm:h-5 sm:w-5" aria-hidden="true"><use href="#i-calendar" /></svg>
+            <span>Randevu Al</span>
           </a>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=Berberin%2C%2077.%20Sk.%20No%3A2%2FA%2C%2035150%20Bornova%2F%C4%B0zmir" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-xl w-full max-w-[260px] justify-center sm:w-auto sm:max-w-none">
-            <svg class="h-4 w-4 sm:h-5 sm:w-5" aria-hidden="true"><use href="#i-nav" /></svg>
-            <span>Yol Tarifi Al</span>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Berberin%2C%2077.%20Sk.%20No%3A2%2FA%2C%2035150%20Bornova%2F%C4%B0zmir" target="_blank" rel="noopener noreferrer" class="btn-ghost btn-xl justify-center">
+            <svg class="h-4 w-4 shrink-0 sm:h-5 sm:w-5" aria-hidden="true"><use href="#i-nav" /></svg>
+            <span>Yol Tarifi</span>
           </a>
         </div>
-        <ul class="hero-meta mt-7 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[0.62rem] uppercase tracking-[0.22em] text-white/80 sm:mt-10 sm:gap-x-6 sm:text-[0.7rem] sm:tracking-[0.3em]" data-reveal style="--d:480ms">
-          <li>Online Randevu</li><li class="dot"></li><li>Kişiye Özel Stil</li><li class="dot"></li><li>VIP Deneyim</li>
-        </ul>
       </div>
 
       <a href="#konum" class="scroll-cue" aria-label="Aşağı kaydır"><span></span></a>
@@ -321,106 +317,94 @@
       </div>
     </section>
 
-    <!-- ============ HASHTAG STRIP ============ -->
-    <section id="etiketler" class="relative border-y border-white/5 bg-coal/60 py-6 sm:py-10" aria-label="Önerilen etiketler">
-      <p class="mb-4 text-center text-[0.6rem] uppercase tracking-[0.34em] text-white/40 sm:mb-6 sm:text-[0.68rem] sm:tracking-[0.4em]">Bornova'nın önerdiği berber</p>
+    <!-- ============ HASHTAG STRIP (Tek satır minimal lüks şerit) ============ -->
+    <section id="etiketler" class="tag-strip relative border-y border-white/[0.06] bg-coal/50 py-3.5 sm:py-4" aria-label="Önerilen etiketler">
       <div class="marquee" data-marquee>
         <ul class="marquee-track">
-          <li class="tag-pill"><span>#</span>BornovaBerber</li>
-          <li class="tag-pill"><span>#</span>İzmirErkekKuaförü</li>
-          <li class="tag-pill"><span>#</span>BerberinnBornova</li>
-          <li class="tag-pill"><span>#</span>HakanÇetinkaya</li>
-          <li class="tag-pill"><span>#</span>BornovaFade</li>
-          <li class="tag-pill"><span>#</span>SakalTasarımı</li>
-          <li class="tag-pill"><span>#</span>VIPTıraş</li>
-          <li class="tag-pill"><span>#</span>BornovaSaçKesimi</li>
-          <li class="tag-pill"><span>#</span>İzmirBarbershop</li>
-          <li class="tag-pill"><span>#</span>ÖnerilenBerber</li>
-        </ul>
-      </div>
-      <div class="marquee mt-2.5 sm:mt-4" data-marquee data-reverse>
-        <ul class="marquee-track">
-          <li class="tag-pill"><span>#</span>ÖnerilenBerber</li>
-          <li class="tag-pill"><span>#</span>İzmirBarbershop</li>
-          <li class="tag-pill"><span>#</span>BornovaSaçKesimi</li>
-          <li class="tag-pill"><span>#</span>VIPTıraş</li>
-          <li class="tag-pill"><span>#</span>SakalTasarımı</li>
-          <li class="tag-pill"><span>#</span>BornovaFade</li>
-          <li class="tag-pill"><span>#</span>HakanÇetinkaya</li>
-          <li class="tag-pill"><span>#</span>BerberinnBornova</li>
-          <li class="tag-pill"><span>#</span>İzmirErkekKuaförü</li>
-          <li class="tag-pill"><span>#</span>BornovaBerber</li>
+          <li class="tag-item"><span>#</span>BornovaBerber</li>
+          <li class="tag-item"><span>#</span>İzmirErkekKuaförü</li>
+          <li class="tag-item"><span>#</span>BerberinnBornova</li>
+          <li class="tag-item"><span>#</span>HakanÇetinkaya</li>
+          <li class="tag-item"><span>#</span>BornovaFade</li>
+          <li class="tag-item"><span>#</span>SakalTasarımı</li>
+          <li class="tag-item"><span>#</span>VIPTıraş</li>
+          <li class="tag-item"><span>#</span>BornovaSaçKesimi</li>
+          <li class="tag-item"><span>#</span>İzmirBarbershop</li>
+          <li class="tag-item"><span>#</span>ÖnerilenBerber</li>
         </ul>
       </div>
     </section>
 
-    <!-- ============ SERVICES ============ -->
+    <!-- ============ SERVICES (Modern Lüks Menü Kartları) ============ -->
     <section id="hizmetler" class="section relative">
-      <div class="mx-auto max-w-7xl px-4 sm:px-8">
-        <div class="mx-auto max-w-2xl text-center">
+      <div class="mx-auto max-w-6xl px-4 sm:px-8">
+        <div class="mx-auto max-w-xl text-center">
           <p class="eyebrow justify-center" data-reveal>Hizmetler</p>
           <h2 class="section-title" data-reveal style="--d:100ms">Her detayda <span class="text-gold-metal">ustalık</span></h2>
-          <p class="section-lead" data-reveal style="--d:200ms">Klasik berberlik geleneği, modern tekniklerle buluşuyor. Hizmetinizi seçin, randevunuzu saniyeler içinde oluşturun.</p>
+          <p class="section-lead" data-reveal style="--d:180ms">Hizmetinizi seçin, beklemeden online randevunuzu oluşturun.</p>
         </div>
 
-        <div class="mt-9 grid gap-3.5 sm:mt-16 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
-          <!-- Fiyat eklemek için ilgili kartta <span class="price-tag"></span> içine örn. ₺600 yazın. Boşsa görünmez. -->
-          <article class="lux-card service-card" data-reveal data-glow>
-            <div class="flex items-start justify-between">
-              <span class="svc-num">01</span>
-              <span class="price-tag"></span>
+        <div class="mt-7 grid gap-3 sm:mt-12 sm:grid-cols-2 sm:gap-4">
+          <!-- Fiyat eklemek için <span class="price-tag"></span> içine örn. ₺600 yazın. Boşsa görünmez. -->
+          <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="lux-card svc-row" data-reveal data-glow>
+            <div class="svc-ico-box"><svg aria-hidden="true"><use href="#i-scissors" /></svg></div>
+            <div class="svc-body">
+              <div class="svc-head">
+                <h3>Modern Saç Kesimi &amp; Fade</h3>
+                <span class="price-tag"></span>
+              </div>
+              <p>Yüz hattınıza özel skin fade, taper ve makas kesimde milimetrik geçişler.</p>
+              <div class="svc-foot">
+                <span class="svc-meta">Skin Fade · Taper · Makas</span>
+                <span class="svc-go">Randevu <svg aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </div>
             </div>
-            <svg class="svc-icon" aria-hidden="true"><use href="#i-scissors" /></svg>
-            <h3 class="svc-title">Modern Saç Kesimi &amp; Fade</h3>
-            <p class="svc-text">Yüz hattınıza ve saç yapınıza özel analiz; skin fade, taper ve makas kesimde milimetrik, pürüzsüz geçişler.</p>
-            <ul class="svc-tags"><li>Skin Fade</li><li>Taper</li><li>Makas</li></ul>
-            <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="svc-link" aria-label="Modern Saç Kesimi & Fade için randevu al">
-              <span>Randevu Al</span><svg class="h-4 w-4" aria-hidden="true"><use href="#i-arrow" /></svg>
-            </a>
-          </article>
+          </a>
 
-          <article class="lux-card service-card" data-reveal data-glow style="--d:90ms">
-            <div class="flex items-start justify-between">
-              <span class="svc-num">02</span>
-              <span class="price-tag"></span>
+          <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="lux-card svc-row" data-reveal data-glow style="--d:80ms">
+            <div class="svc-ico-box"><svg aria-hidden="true"><use href="#i-razor" /></svg></div>
+            <div class="svc-body">
+              <div class="svc-head">
+                <h3>Sakal Tasarımı &amp; Sıcak Havlu</h3>
+                <span class="price-tag"></span>
+              </div>
+              <p>Ustura ile keskin hatlar, yüz formuna uygun şekillendirme ve sıcak havlu ritüeli.</p>
+              <div class="svc-foot">
+                <span class="svc-meta">Ustura · Sıcak Havlu · Şekil</span>
+                <span class="svc-go">Randevu <svg aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </div>
             </div>
-            <svg class="svc-icon" aria-hidden="true"><use href="#i-razor" /></svg>
-            <h3 class="svc-title">Sakal Tasarımı &amp; Sıcak Havlu</h3>
-            <p class="svc-text">Ustura ile keskin hatlar, yüz formunuza uygun sakal mimarisi ve gözenekleri açan sıcak havlu ritüeli.</p>
-            <ul class="svc-tags"><li>Ustura</li><li>Sıcak Havlu</li><li>Şekillendirme</li></ul>
-            <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="svc-link" aria-label="Sakal Tasarımı & Sıcak Havlu için randevu al">
-              <span>Randevu Al</span><svg class="h-4 w-4" aria-hidden="true"><use href="#i-arrow" /></svg>
-            </a>
-          </article>
+          </a>
 
-          <article class="lux-card service-card" data-reveal data-glow style="--d:180ms">
-            <div class="flex items-start justify-between">
-              <span class="svc-num">03</span>
-              <span class="price-tag"></span>
+          <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="lux-card svc-row" data-reveal data-glow style="--d:160ms">
+            <div class="svc-ico-box"><svg aria-hidden="true"><use href="#i-sparkle" /></svg></div>
+            <div class="svc-body">
+              <div class="svc-head">
+                <h3>VIP Bakım &amp; Cilt Maskesi</h3>
+                <span class="price-tag"></span>
+              </div>
+              <p>Derin cilt temizliği, siyah nokta maskesi, buhar ve rahatlatıcı masaj bakımı.</p>
+              <div class="svc-foot">
+                <span class="svc-meta">Maske · Buhar · Masaj</span>
+                <span class="svc-go">Randevu <svg aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </div>
             </div>
-            <svg class="svc-icon" aria-hidden="true"><use href="#i-sparkle" /></svg>
-            <h3 class="svc-title">VIP Bakım &amp; Cilt Maskesi</h3>
-            <p class="svc-text">Derin temizlik, siyah nokta maskesi, buhar ve rahatlatıcı masajla tamamlanan premium bakım deneyimi.</p>
-            <ul class="svc-tags"><li>Cilt Maskesi</li><li>Buhar</li><li>Masaj</li></ul>
-            <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="svc-link" aria-label="VIP Bakım & Cilt Maskesi için randevu al">
-              <span>Randevu Al</span><svg class="h-4 w-4" aria-hidden="true"><use href="#i-arrow" /></svg>
-            </a>
-          </article>
+          </a>
 
-          <article class="lux-card service-card service-card--featured" data-reveal data-glow style="--d:270ms">
-            <div class="flex items-start justify-between">
-              <span class="svc-num">04</span>
-              <span class="svc-badge">Özel Gün</span>
+          <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="lux-card svc-row svc-row--featured" data-reveal data-glow style="--d:240ms">
+            <div class="svc-ico-box"><svg aria-hidden="true"><use href="#i-crown" /></svg></div>
+            <div class="svc-body">
+              <div class="svc-head">
+                <h3>Damat Tıraşı</h3>
+                <span class="svc-badge">Özel Gün</span>
+              </div>
+              <p>Özel gününüze eksiksiz hazırlık: saç, sakal, cilt bakımı ve profesyonel styling.</p>
+              <div class="svc-foot">
+                <span class="svc-meta">Saç + Sakal · VIP Bakım</span>
+                <span class="svc-go">Randevu <svg aria-hidden="true"><use href="#i-arrow" /></svg></span>
+              </div>
             </div>
-            <svg class="svc-icon" aria-hidden="true"><use href="#i-crown" /></svg>
-            <h3 class="svc-title">Damat Tıraşı</h3>
-            <p class="svc-text">En özel gününüze özel: saç, sakal ve cilt bakımıyla fotoğraf çekimine hazır, kusursuz bir görünüm.</p>
-            <ul class="svc-tags"><li>Saç + Sakal</li><li>Bakım</li><li>Styling</li></ul>
-            <span class="price-tag"></span>
-            <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="svc-link" aria-label="Damat Tıraşı için randevu al">
-              <span>Randevu Al</span><svg class="h-4 w-4" aria-hidden="true"><use href="#i-arrow" /></svg>
-            </a>
-          </article>
+          </a>
         </div>
       </div>
     </section>
@@ -459,7 +443,9 @@
   <footer class="relative border-t border-white/5 bg-coal/40 pb-28 pt-14 lg:pb-14">
     <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-8 px-5 text-center sm:px-8 md:flex-row md:text-left">
       <a href="#top" class="flex items-center gap-3" aria-label="Berberinn">
-        <svg class="h-10 w-10" aria-hidden="true"><use href="#logo-mark" /></svg>
+        <span class="brand-emblem brand-emblem--sm">
+          <img src="assets/img/berber-logo.webp" alt="Berberinn Logo" width="38" height="38" loading="lazy" />
+        </span>
         <span class="flex flex-col leading-none">
           <span class="text-gold-metal font-display text-xl font-bold tracking-[0.12em]">BERBERİNN</span>
           <span class="brand-line my-[5px]"></span>
