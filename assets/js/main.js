@@ -28,12 +28,17 @@
   const menuBtn = $('#menuBtn');
   const menu = $('#mobileMenu');
   const setMenu = (open) => {
+    if (!menuBtn || !menu) return;
     menuBtn.setAttribute('aria-expanded', String(open));
     menuBtn.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
     menu.hidden = !open;
   };
   menuBtn?.addEventListener('click', () => setMenu(menu.hidden));
   $$('#mobileMenu a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu && !menu.hidden) setMenu(false); });
+  document.addEventListener('click', (e) => {
+    if (menu && !menu.hidden && !menu.contains(e.target) && !menuBtn.contains(e.target)) setMenu(false);
+  });
 
   // Active section highlight
   const links = $$('.nav-link');
@@ -89,15 +94,16 @@
   const heroMedia = $('#heroMedia');
   const heroKB = $('#heroKB');
   const video = $('#heroVideo');
-  const placeholder = $('.hero-placeholder', heroMedia);
+  const placeholder = heroMedia ? $('.hero-placeholder', heroMedia) : null;
 
   if (hero.poster && placeholder) {
     placeholder.style.backgroundImage = `url("${hero.poster}")`;
     placeholder.classList.add('has-photo');
   }
 
-  const markReady = () => heroMedia.classList.add('is-ready');
+  const markReady = () => heroMedia && heroMedia.classList.add('is-ready');
   const tryPlay = () => {
+    if (!video) return;
     video.muted = true;
     video.defaultMuted = true;
     const p = video.play();
@@ -321,21 +327,23 @@
     }
   }
 
-  // Mobilde pil tasarrufu / saveData olsa bile showreel oynatılsın
-  if (hero.mode === 'reel') setupReel();
-  else if (hero.mode === 'segments' && !reduceMotion) setupSegments();
+  // Mobilde pil tasarrufu / saveData olsa bile showreel oynatılsın (sadece hero varsa)
+  if (heroMedia && video) {
+    if (hero.mode === 'reel') setupReel();
+    else if (hero.mode === 'segments' && !reduceMotion) setupSegments();
+  }
 
   /* =========================================================
      USTA PORTRAIT
      ========================================================= */
-  if (MEDIA.portrait) {
-    const frame = $('#ustaPortrait');
+  const portraitFrame = $('#ustaPortrait');
+  if (MEDIA.portrait && portraitFrame) {
     const img = new Image();
     img.alt = 'Usta Hakan Çetinkaya – Berberinn Bornova';
     img.loading = 'lazy'; img.decoding = 'async';
-    img.onload = () => { frame.querySelector('.portrait-placeholder')?.remove(); };
+    img.onload = () => { portraitFrame.querySelector('.portrait-placeholder')?.remove(); };
     img.src = MEDIA.portrait;
-    frame.prepend(img);
+    portraitFrame.prepend(img);
   }
 
   /* =========================================================
@@ -355,64 +363,78 @@
   const items = (MEDIA.gallery && MEDIA.gallery.length) ? MEDIA.gallery : PLACEHOLDERS;
   const grid = $('#galleryGrid');
 
-  const layoutFor = (it, i) => {
-    if (it.layout) return it.layout;
-    if (i === 0) return 'big';
-    if (it.orientation === 'portrait') return 'tall';
-    if (it.orientation === 'landscape') return 'wide';
-    return '';
-  };
+  if (grid) {
+    const layoutFor = (it, i) => {
+      if (it.layout) return it.layout;
+      if (i === 0) return 'big';
+      if (it.orientation === 'portrait') return 'tall';
+      if (it.orientation === 'landscape') return 'wide';
+      return '';
+    };
 
-  const clipObs = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      const v = e.target;
-      if (e.isIntersecting) { if (v.preload === 'none') { v.preload = 'metadata'; v.src = v.dataset.src; } v.play().catch(() => {}); }
-      else v.pause();
+    const clipObs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        const v = e.target;
+        if (e.isIntersecting) { if (v.preload === 'none') { v.preload = 'metadata'; v.src = v.dataset.src; } v.play().catch(() => {}); }
+        else v.pause();
+      });
+    }, { threshold: 0.35 });
+
+    items.forEach((it, i) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      const lay = layoutFor(it, i);
+      btn.className = `tile${lay ? ' tile--' + lay : ''}${it.type === 'placeholder' ? ' tile--ph' : ''}`;
+      btn.style.setProperty('--d', `${(i % 4) * 80}ms`);
+      btn.dataset.index = i;
+      btn.dataset.kind = it.type;
+      btn.setAttribute('aria-label', `${it.title || it.alt || 'Galeri görseli'} – büyüt`);
+
+      let icon = 'i-expand';
+      if (it.type === 'image') {
+        if (it.lqip) btn.style.backgroundImage = `url("${it.lqip}")`;
+        const img = new Image();
+        img.loading = 'lazy'; img.decoding = 'async';
+        img.alt = it.alt || 'Berberinn Bornova galeri';
+        if (it.width && it.height) { img.width = it.width; img.height = it.height; }
+        img.onload = () => img.classList.add('is-loaded');
+        img.src = it.thumb || it.full;
+        btn.appendChild(img);
+      } else if (it.type === 'video') {
+        icon = 'i-play';
+        const v = document.createElement('video');
+        v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'none';
+        v.setAttribute('playsinline', ''); v.setAttribute('muted', '');
+        if (it.poster) v.poster = it.poster;
+        v.dataset.src = it.src;
+        btn.appendChild(v);
+        if (!reduceMotion) clipObs.observe(v);
+      } else {
+        btn.style.setProperty('--px', `${20 + ((i * 37) % 60)}%`);
+        btn.style.setProperty('--py', `${15 + ((i * 23) % 50)}%`);
+        btn.insertAdjacentHTML('beforeend', `<svg class="ph-icon" aria-hidden="true"><use href="#${it.icon}"/></svg>`);
+      }
+
+      const title = it.title || it.alt || '';
+      btn.insertAdjacentHTML('beforeend',
+        `<span class="tile-cap"><span>${it.tag ? `<small>${it.tag}</small>` : ''}<b>${escapeHtml(title)}</b></span>` +
+        `<span class="tile-ico"><svg aria-hidden="true"><use href="#${icon}"/></svg></span></span>`);
+      btn.addEventListener('click', () => openLightbox(i));
+      grid.appendChild(btn);
+      observeReveal(btn);
     });
-  }, { threshold: 0.35 });
 
-  items.forEach((it, i) => {
-    const btn = document.createElement('button');
-    btn.type = 'button';
-    const lay = layoutFor(it, i);
-    btn.className = `tile${lay ? ' tile--' + lay : ''}${it.type === 'placeholder' ? ' tile--ph' : ''}`;
-    btn.style.setProperty('--d', `${(i % 4) * 80}ms`);
-    btn.dataset.index = i;
-    btn.setAttribute('aria-label', `${it.title || it.alt || 'Galeri görseli'} – büyüt`);
-
-    let icon = 'i-expand';
-    if (it.type === 'image') {
-      if (it.lqip) btn.style.backgroundImage = `url("${it.lqip}")`;
-      const img = new Image();
-      img.loading = 'lazy'; img.decoding = 'async';
-      img.alt = it.alt || 'Berberinn Bornova galeri';
-      if (it.width && it.height) { img.width = it.width; img.height = it.height; }
-      img.onload = () => img.classList.add('is-loaded');
-      img.src = it.thumb || it.full;
-      btn.appendChild(img);
-    } else if (it.type === 'video') {
-      icon = 'i-play';
-      const v = document.createElement('video');
-      v.muted = true; v.loop = true; v.playsInline = true; v.preload = 'none';
-      v.setAttribute('playsinline', ''); v.setAttribute('muted', '');
-      if (it.poster) v.poster = it.poster;
-      v.dataset.src = it.src;
-      btn.appendChild(v);
-      if (!reduceMotion) clipObs.observe(v);
-    } else {
-      btn.style.setProperty('--px', `${20 + ((i * 37) % 60)}%`);
-      btn.style.setProperty('--py', `${15 + ((i * 23) % 50)}%`);
-      btn.insertAdjacentHTML('beforeend', `<svg class="ph-icon" aria-hidden="true"><use href="#${it.icon}"/></svg>`);
-    }
-
-    const title = it.title || it.alt || '';
-    btn.insertAdjacentHTML('beforeend',
-      `<span class="tile-cap"><span>${it.tag ? `<small>${it.tag}</small>` : ''}<b>${escapeHtml(title)}</b></span>` +
-      `<span class="tile-ico"><svg aria-hidden="true"><use href="#${icon}"/></svg></span></span>`);
-    btn.addEventListener('click', () => openLightbox(i));
-    grid.appendChild(btn);
-    observeReveal(btn);
-  });
+    // Galeri sayfası kategori filtresi (Tümü / Fotoğraflar / Videolar)
+    $$('[data-filter]').forEach((fb) => {
+      fb.addEventListener('click', () => {
+        const f = fb.dataset.filter;
+        $$('[data-filter]').forEach((x) => x.classList.toggle('is-active', x === fb));
+        $$('.tile', grid).forEach((t) => {
+          t.hidden = (f !== 'all' && t.dataset.kind !== f);
+        });
+      });
+    });
+  }
 
   function escapeHtml(s) { return String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
 
@@ -420,12 +442,13 @@
      LIGHTBOX
      ========================================================= */
   const lb = $('#lightbox');
-  const lbMedia = $('.lb-media', lb);
-  const lbTitle = $('.lb-title', lb);
-  const lbCount = $('.lb-count', lb);
+  const lbMedia = lb ? $('.lb-media', lb) : null;
+  const lbTitle = lb ? $('.lb-title', lb) : null;
+  const lbCount = lb ? $('.lb-count', lb) : null;
   let lbIndex = 0, lastFocus = null;
 
   function renderLB() {
+    if (!lbMedia) return;
     const it = items[lbIndex];
     lbMedia.innerHTML = '';
     let el;
@@ -449,6 +472,7 @@
     lbCount.textContent = `${String(lbIndex + 1).padStart(2, '0')} / ${String(items.length).padStart(2, '0')}`;
   }
   function openLightbox(i) {
+    if (!lb) return;
     lastFocus = document.activeElement;
     lbIndex = i; renderLB();
     lb.hidden = false;
@@ -456,11 +480,13 @@
     $('.lb-close', lb).focus();
   }
   function closeLightbox() {
+    if (!lb) return;
     lb.hidden = true; lbMedia.innerHTML = '';
     document.documentElement.style.overflow = '';
     lastFocus && lastFocus.focus();
   }
   function step(dir) {
+    if (!lbMedia) return;
     lbMedia.classList.add('is-leaving');
     setTimeout(() => {
       lbMedia.classList.remove('is-leaving');
@@ -468,19 +494,21 @@
       renderLB();
     }, 260);
   }
-  $$('[data-lb-close]', lb).forEach((b) => b.addEventListener('click', closeLightbox));
-  $('.lb-prev', lb).addEventListener('click', () => step(-1));
-  $('.lb-next', lb).addEventListener('click', () => step(1));
-  document.addEventListener('keydown', (e) => {
-    if (lb.hidden) return;
-    if (e.key === 'Escape') closeLightbox();
-    else if (e.key === 'ArrowRight') step(1);
-    else if (e.key === 'ArrowLeft') step(-1);
-  });
-  let tx = 0;
-  lb.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; }, { passive: true });
-  lb.addEventListener('touchend', (e) => {
-    const dx = e.changedTouches[0].clientX - tx;
-    if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
-  }, { passive: true });
+  if (lb) {
+    $$('[data-lb-close]', lb).forEach((b) => b.addEventListener('click', closeLightbox));
+    $('.lb-prev', lb)?.addEventListener('click', () => step(-1));
+    $('.lb-next', lb)?.addEventListener('click', () => step(1));
+    document.addEventListener('keydown', (e) => {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowRight') step(1);
+      else if (e.key === 'ArrowLeft') step(-1);
+    });
+    let tx = 0;
+    lb.addEventListener('touchstart', (e) => { tx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - tx;
+      if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  }
 })();

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="tr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Galeri | Berberinn Bornova – Hakan Çetinkaya</title>
+  <meta name="description" content="Berberinn Bornova galerisi: salon fotoğrafları, skin fade kesimleri, sakal tasarımları ve kısa kesim klipleri." />
+  <meta name="theme-color" content="#060608" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { ink: '#060608', coal: '#0E0E12', gold: { DEFAULT: '#D4AF37', bright: '#FFD700', amber: '#F59E0B', deep: '#8C6B1F', soft: '#E8D7A0' } }, fontFamily: { display: ['Cinzel', 'serif'], serif: ['"Cormorant Garamond"', 'serif'], sans: ['Manrope', 'system-ui', 'sans-serif'] } } } };
+  </script>
+  <link rel="stylesheet" href="assets/css/style.css?v=3" />
+</head>
+<body class="bg-ink text-[#E9E6DF] font-sans antialiased selection:bg-gold selection:text-ink">
+  <svg width="0" height="0" class="absolute" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3.5 10h17M8 3v4M16 3v4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5Z" fill="currentColor"/></symbol>
+    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  </defs></svg>
+
+  <div class="corner-fx" aria-hidden="true">
+    <span class="glow glow-tl"></span><span class="glow glow-tr"></span><span class="glow glow-bl"></span><span class="glow glow-br"></span>
+    <span class="corner corner-tl"></span><span class="corner corner-tr"></span><span class="corner corner-bl"></span><span class="corner corner-br"></span>
+  </div>
+
+  <header id="siteNav" class="nav fixed inset-x-0 top-0 z-50 is-scrolled">
+    <div class="mx-auto flex h-[60px] max-w-7xl items-center justify-between gap-2 px-3.5 sm:h-[74px] sm:gap-4 sm:px-8">
+      <a href="index.html" class="brand group flex items-center gap-2.5 sm:gap-3" aria-label="Berberinn – Ana sayfa">
+        <span class="brand-emblem"><img src="assets/img/berber-logo.webp?v=2" alt="Berberinn Logo" width="54" height="54" /></span>
+        <span class="flex flex-col leading-none">
+          <span class="brand-name text-gold-metal font-display text-[1.08rem] font-bold tracking-[0.11em] sm:text-[1.48rem]">BERBERİNN</span>
+          <span class="brand-line my-[3.5px] sm:my-[5px]"></span>
+          <span class="brand-sub text-[0.46rem] font-medium uppercase tracking-[0.3em] text-[#cfc6ad] sm:text-[0.6rem] sm:tracking-[0.4em]">by Hakan Çetinkaya</span>
+        </span>
+      </a>
+      <nav class="hidden items-center gap-9 text-[0.76rem] font-medium uppercase tracking-[0.22em] text-white/70 lg:flex" aria-label="Ana menü">
+        <a class="nav-link" href="index.html">Ana Sayfa</a>
+        <a class="nav-link" href="konum.html">Konum</a>
+        <a class="nav-link" href="ustalik.html">Ustalık</a>
+        <a class="nav-link" href="hizmetler.html">Hizmetler</a>
+        <a class="nav-link is-active" href="galeri.html">Galeri</a>
+      </nav>
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="btn-gold-outline nav-cta"><svg class="h-3.5 w-3.5 sm:h-4 sm:w-4"><use href="#i-calendar" /></svg><span>Randevu Al</span></a>
+        <button id="menuBtn" class="menu-btn lg:hidden" aria-label="Menüyü aç" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="mobile-menu lg:hidden" hidden>
+      <nav class="flex flex-col px-5 pb-6 pt-2" aria-label="Mobil menü">
+        <a class="mm-item" href="index.html"><span class="mm-left"><span class="mm-num">00</span><span><span class="mm-title">Ana Sayfa</span><span class="mm-sub">Genel bakış &amp; showreel</span></span></span><svg class="mm-arrow"><use href="#i-arrow" /></svg></a>
+        <a class="mm-item" href="konum.html"><span class="mm-left"><span class="mm-num">01</span><span><span class="mm-title">Konum &amp; Yol Tarifi</span><span class="mm-sub">77. Sk. No:2/A, Bornova / İzmir</span></span></span><svg class="mm-arrow"><use href="#i-arrow" /></svg></a>
+        <a class="mm-item" href="ustalik.html"><span class="mm-left"><span class="mm-num">02</span><span><span class="mm-title">Usta Hakan Çetinkaya</span><span class="mm-sub">1987'den bugüne ustalık</span></span></span><svg class="mm-arrow"><use href="#i-arrow" /></svg></a>
+        <a class="mm-item" href="hizmetler.html"><span class="mm-left"><span class="mm-num">03</span><span><span class="mm-title">Hizmetler</span><span class="mm-sub">Fade, sakal, VIP bakım &amp; damat</span></span></span><svg class="mm-arrow"><use href="#i-arrow" /></svg></a>
+        <a class="mm-item is-current" href="galeri.html"><span class="mm-left"><span class="mm-num">04</span><span><span class="mm-title">Galeri</span><span class="mm-sub">Fotoğraflar &amp; kesim klipleri</span></span></span><svg class="mm-arrow"><use href="#i-arrow" /></svg></a>
+        <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="btn-gold mt-5 justify-center"><svg class="h-4 w-4"><use href="#i-calendar" /></svg><span>Hemen Randevu Al</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="mx-auto max-w-6xl px-4 text-center sm:px-8">
+        <p class="eyebrow justify-center">Salon &amp; Kesimler</p>
+        <h1 class="section-title">Koltuktan <span class="text-gold-metal">Kareler</span></h1>
+        <p class="section-lead mx-auto max-w-xl">Salonumuz, skin fade geçişleri, sakal tasarımları ve kısa kesim klipleri. Tam ekran görmek için bir kareye dokunun.</p>
+        <div class="filter-bar mt-6 justify-center" role="group" aria-label="Galeri filtresi">
+          <button type="button" class="filter-btn is-active" data-filter="all">Tümü</button>
+          <button type="button" class="filter-btn" data-filter="image">Fotoğraflar</button>
+          <button type="button" class="filter-btn" data-filter="video">Videolar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="mx-auto max-w-7xl px-4 sm:px-8">
+        <div id="galleryGrid" class="bento" aria-live="polite"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="relative border-t border-white/5 bg-coal/40 pb-28 pt-12 lg:pb-12">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-5 text-center sm:px-8 md:flex-row md:text-left">
+      <a href="index.html" class="flex items-center gap-3"><span class="brand-emblem brand-emblem--sm"><img src="assets/img/berber-logo.webp?v=2" alt="Berberinn Logo" width="38" height="38" /></span><span class="flex flex-col leading-none"><span class="text-gold-metal font-display text-xl font-bold tracking-[0.12em]">BERBERİNN</span><span class="brand-line my-[5px]"></span><span class="text-[0.55rem] uppercase tracking-[0.42em] text-white/60">by Hakan Çetinkaya</span></span></a>
+      <p class="text-sm text-white/45">77. Sk. No:2/A, Bornova, 35150, İzmir, TR</p>
+      <p class="text-xs text-white/35">© <span id="year">2026</span> Berberinn. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <div class="mobile-cta is-visible lg:hidden" role="navigation" aria-label="Hızlı işlemler">
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Berberin%2C%2077.%20Sk.%20No%3A2%2FA%2C%2035150%20Bornova%2F%C4%B0zmir" target="_blank" rel="noopener noreferrer" class="mobile-cta-loc"><svg class="h-4 w-4"><use href="#i-pin" /></svg><span>Konum</span></a>
+    <a href="https://www.viprandevusistemi.com.tr/s/berberin" target="_blank" rel="noopener noreferrer" class="mobile-cta-book"><svg class="h-4 w-4"><use href="#i-calendar" /></svg><span>Randevu Al</span></a>
+  </div>
+
+  <div id="lightbox" class="lb" role="dialog" aria-modal="true" aria-label="Galeri görüntüleyici" hidden>
+    <div class="lb-backdrop" data-lb-close></div>
+    <button class="lb-btn lb-close" data-lb-close aria-label="Kapat">&times;</button>
+    <button class="lb-btn lb-prev" aria-label="Önceki"><svg class="h-6 w-6 rotate-180"><use href="#i-arrow" /></svg></button>
+    <button class="lb-btn lb-next" aria-label="Sonraki"><svg class="h-6 w-6"><use href="#i-arrow" /></svg></button>
+    <figure class="lb-stage">
+      <div class="lb-media brackets"></div>
+      <figcaption class="lb-caption"><span class="lb-title"></span><span class="lb-count"></span></figcaption>
+    </figure>
+  </div>
+
+  <script src="assets/js/media-manifest.js"></script>
+  <script src="assets/js/main.js?v=3" defer></script>
+</body>
+</html>
