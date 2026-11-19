@@ -1,0 +1,22 @@
+{
+  "name": "berberinn-bornova",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BERBERİNN by Hakan Çetinkaya — Bornova / İzmir berber web sitesi",
+  "scripts": {
+    "media": "node scripts/process-media.mjs",
+    "media:hero": "node scripts/process-media.mjs --only hero",
+    "media:photos": "node scripts/process-media.mjs --only photos",
+    "media:clips": "node scripts/process-media.mjs --only clips",
+    "serve": "node scripts/serve.mjs"
+  },
+  "dependencies": {
+    "sharp": "^0.33.5"
+  },
+  "optionalDependencies": {
+    "ffmpeg-static": "^5.2.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
