@@ -1,17 +1,17 @@
 /* Bu dosya "npm run media" (scripts/process-media.mjs) tarafından otomatik üretilir. Elle düzenlemeyin. */
 window.BERBERINN_MEDIA = {
-  "generatedAt": "2026-11-19T13:01:35.049Z",
+  "generatedAt": "2026-11-19T14:17:46.286Z",
   "hero": {
     "mode": "reel",
     "sources": [
       {
-        "src": "media/hero/hero.mp4?v=mwnk5uno",
+        "src": "media/hero/hero.mp4?v=mwnmtqxz",
         "type": "video/mp4"
       }
     ],
-    "mobile": "media/hero/hero-mobile.mp4?v=mwnk5uno",
-    "poster": "media/hero/poster.webp?v=mwnk5uno",
-    "duration": 23.1,
+    "mobile": "media/hero/hero-mobile.mp4?v=mwnmtqxz",
+    "poster": "media/hero/poster.webp?v=mwnmtqxz",
+    "duration": 24.9,
     "scenes": [
       {
         "file": "must-01-sarisin-fade.mp4",
@@ -26,11 +26,6 @@ window.BERBERINN_MEDIA = {
       {
         "file": "must-03-sakal-kesme.mp4",
         "start": 3.3,
-        "length": 4
-      },
-      {
-        "file": "WhatsApp Video 2026-11-19 at 13.09.09.mp4",
-        "start": 29.25,
         "length": 4
       }
     ]
@@ -151,24 +146,24 @@ window.BERBERINN_MEDIA = {
     },
     {
       "type": "video",
-      "src": "media/clips-auto/kesim-1.mp4?v=mwnk5uno",
-      "poster": "media/clips-auto/kesim-1.webp?v=mwnk5uno",
+      "src": "media/clips-auto/kesim-1.mp4?v=mwnmtqxz",
+      "poster": "media/clips-auto/kesim-1.webp?v=mwnmtqxz",
       "title": "Usta İşi",
       "tag": "Kesim",
       "orientation": "portrait"
     },
     {
       "type": "video",
-      "src": "media/clips-auto/kesim-2.mp4?v=mwnk5uno",
-      "poster": "media/clips-auto/kesim-2.webp?v=mwnk5uno",
+      "src": "media/clips-auto/kesim-2.mp4?v=mwnmtqxz",
+      "poster": "media/clips-auto/kesim-2.webp?v=mwnmtqxz",
       "title": "Usta İşi",
       "tag": "Kesim",
       "orientation": "portrait"
     },
     {
       "type": "video",
-      "src": "media/clips-auto/kesim-3.mp4?v=mwnk5uno",
-      "poster": "media/clips-auto/kesim-3.webp?v=mwnk5uno",
+      "src": "media/clips-auto/kesim-3.mp4?v=mwnmtqxz",
+      "poster": "media/clips-auto/kesim-3.webp?v=mwnmtqxz",
       "title": "Usta İşi",
       "tag": "Kesim",
       "orientation": "portrait"
@@ -179,13 +174,13 @@ window.BERBERINN_MEDIA = {
       "mode": "reel",
       "sources": [
         {
-          "src": "media/hero/hero.mp4?v=mwnk5uno",
+          "src": "media/hero/hero.mp4?v=mwnmtqxz",
           "type": "video/mp4"
         }
       ],
-      "mobile": "media/hero/hero-mobile.mp4?v=mwnk5uno",
-      "poster": "media/hero/poster.webp?v=mwnk5uno",
-      "duration": 23.1,
+      "mobile": "media/hero/hero-mobile.mp4?v=mwnmtqxz",
+      "poster": "media/hero/poster.webp?v=mwnmtqxz",
+      "duration": 24.9,
       "scenes": [
         {
           "file": "must-01-sarisin-fade.mp4",
@@ -200,11 +195,6 @@ window.BERBERINN_MEDIA = {
         {
           "file": "must-03-sakal-kesme.mp4",
           "start": 3.3,
-          "length": 4
-        },
-        {
-          "file": "WhatsApp Video 2026-11-19 at 13.09.09.mp4",
-          "start": 29.25,
           "length": 4
         }
       ]
@@ -329,24 +319,24 @@ window.BERBERINN_MEDIA = {
     "autoClips": [
       {
         "type": "video",
-        "src": "media/clips-auto/kesim-1.mp4?v=mwnk5uno",
-        "poster": "media/clips-auto/kesim-1.webp?v=mwnk5uno",
+        "src": "media/clips-auto/kesim-1.mp4?v=mwnmtqxz",
+        "poster": "media/clips-auto/kesim-1.webp?v=mwnmtqxz",
         "title": "Usta İşi",
         "tag": "Kesim",
         "orientation": "portrait"
       },
       {
         "type": "video",
-        "src": "media/clips-auto/kesim-2.mp4?v=mwnk5uno",
-        "poster": "media/clips-auto/kesim-2.webp?v=mwnk5uno",
+        "src": "media/clips-auto/kesim-2.mp4?v=mwnmtqxz",
+        "poster": "media/clips-auto/kesim-2.webp?v=mwnmtqxz",
         "title": "Usta İşi",
         "tag": "Kesim",
         "orientation": "portrait"
       },
       {
         "type": "video",
-        "src": "media/clips-auto/kesim-3.mp4?v=mwnk5uno",
-        "poster": "media/clips-auto/kesim-3.webp?v=mwnk5uno",
+        "src": "media/clips-auto/kesim-3.mp4?v=mwnmtqxz",
+        "poster": "media/clips-auto/kesim-3.webp?v=mwnmtqxz",
         "title": "Usta İşi",
         "tag": "Kesim",
         "orientation": "portrait"
