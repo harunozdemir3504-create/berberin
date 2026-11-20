@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://berberinn.com.tr/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://berberinn.com.tr/media/gallery/01-berberinn-salon.webp</image:loc>
+      <image:title>Berberinn Bornova Erkek Kuaförü – Hakan Çetinkaya</image:title>
+      <image:caption>Berberinn Bornova lüks erkek kuaförü salon içi, Hakan Çetinkaya İzmir berber</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://berberinn.com.tr/media/portrait.webp</image:loc>
+      <image:title>Usta Hakan Çetinkaya – Berberinn Bornova</image:title>
+      <image:caption>Bornova İzmir erkek kuaförü ve berber ustası Hakan Çetinkaya</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://berberinn.com.tr/konum.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://berberinn.com.tr/ustalik.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://berberinn.com.tr/hizmetler.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://berberinn.com.tr/galeri.html</loc>
+    <lastmod>2026-11-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://berberinn.com.tr/media/gallery/02-salon-koltuklar.webp</image:loc>
+      <image:title>Bornova En İyi Berber Salonu – Berberinn</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://berberinn.com.tr/media/gallery/03-vip-bakim-istasyonu.webp</image:loc>
+      <image:title>Bornova VIP Tıraş ve Cilt Bakımı – Berberinn</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://berberinn.com.tr/media/gallery/04-skin-fade-kesim.webp</image:loc>
+      <image:title>Bornova Skin Fade Saç Kesimi – Hakan Çetinkaya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://berberinn.com.tr/media/gallery/05-hc-monogram-1987.webp</image:loc>
+      <image:title>Hakan Çetinkaya 1987 Modern Erkeğin Klasik Berberi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://berberinn.com.tr/media/gallery/06-koltuktan-kare.webp</image:loc>
+      <image:title>Bornova Erkek Kuaförü Hakan Çetinkaya</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://berberinn.com.tr/media/gallery/07-modern-stil.webp</image:loc>
+      <image:title>Bornova Modern Saç Kesimi ve Taper Fade</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://berberinn.com.tr/media/gallery/08-usta-hakan-portre.webp</image:loc>
+      <image:title>Usta Hakan Çetinkaya – Bornova İzmir</image:title>
+    </image:image>
+  </url>
+</urlset>

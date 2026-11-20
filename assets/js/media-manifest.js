@@ -40,8 +40,8 @@ window.BERBERINN_MEDIA = {
       "height": 1086,
       "orientation": "landscape",
       "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQBACdASoYABAAPu1mq04ppaQiMAgBMB2JYwCdACPo5rxTW7TUnuiuGAD+gaIJfQisDMhbGB4SdjzveHUGRdfA772Y3FyAFUcmnIHRWD6w1zpVyL3YYAAA",
-      "title": "Berberinn salon",
-      "alt": "Berberinn Bornova – Berberinn salon"
+      "title": "Berberinn Salon",
+      "alt": "Berberinn Bornova lüks erkek kuaförü salon içi – Hakan Çetinkaya İzmir berber"
     },
     {
       "type": "image",
@@ -51,8 +51,8 @@ window.BERBERINN_MEDIA = {
       "height": 1440,
       "orientation": "portrait",
       "lqip": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACwBQCdASoYAB4APu1osFCppaSiqAqpMB2JQBdgBedtvTOUaf8w1cZsosQ3nvrijincWfPinQAA8aoaURsjQY92r814L2oxtYjIJzF8ArBJBxMJBhYuiiMRfkjY51bAj/HdX9FjY7xjRJMDQJSoMiUELRsicx6B9nBFfIl/8WgQSDm7wEpITDHmsCZAAA==",
-      "title": "Salon koltuklar",
-      "alt": "Berberinn Bornova – Salon koltuklar"
+      "title": "Salon & Koltuklar",
+      "alt": "Bornova en iyi berber salonu deri koltuklar ve LED aynalar – Berberinn İzmir"
     },
     {
       "type": "image",
@@ -62,14 +62,14 @@ window.BERBERINN_MEDIA = {
       "height": 2000,
       "orientation": "portrait",
       "lqip": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAADQBACdASoYAB4APulep02pJSOiN/VYASAdCUAWcAe048G/xcfgdifwxhGY0CyVQAD+5Z21f+aNNIBRS1gnWTK6LfpjzXypQkNKReiQw6CG92HC/3Y5NP2RuxT9CLnpXXXT+CJvUf3jBEpsXhW5l3xPmDr5namPsd9XN7ntoYkOosQhZbVJoAAA",
-      "title": "Vip bakim istasyonu",
-      "alt": "Berberinn Bornova – Vip bakim istasyonu"
+      "title": "VIP Bakım İstasyonu",
+      "alt": "Bornova VIP tıraş ve cilt bakımı istasyonu – Berberinn Erkek Kuaförü İzmir"
     },
     {
       "type": "video",
       "src": "media/clips/01-modern-fade-kesim.mp4?v=mwnfvz5u",
       "poster": "media/clips/01-modern-fade-kesim.webp?v=mwnfvz5u",
-      "title": "Modern fade kesim",
+      "title": "Modern Fade Kesim",
       "tag": "Video",
       "orientation": "portrait"
     },
@@ -81,8 +81,8 @@ window.BERBERINN_MEDIA = {
       "height": 1600,
       "orientation": "portrait",
       "lqip": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABwBQCdASoYAB4APu1mrVAppSQisBgIATAdiUAZGoXOYwKdAeImufzCSp2u/oz4sPsEBv1AAP6d0CgBZelFncg5bdyQEFNLd6TlANFpG6TH+G/4h7pvErmrNGQfxDyjMt2x3Xvvs7E/p/Rk+eNXwCv8hOwtRsp28u98G6AM613F8dzvR2iFo+Ot8cZdQ1oG/H5a392pAAA=",
-      "title": "Skin fade kesim",
-      "alt": "Berberinn Bornova – Skin fade kesim"
+      "title": "Skin Fade Kesim",
+      "alt": "Bornova skin fade saç kesimi ve sakal hattı – Hakan Çetinkaya Berberinn İzmir"
     },
     {
       "type": "image",
@@ -92,8 +92,8 @@ window.BERBERINN_MEDIA = {
       "height": 1254,
       "orientation": "square",
       "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQBACdASoYABgAPu1mqk8ppaOiKA1RMB2JZQDKABEdBiJTxPU1gJyTAAD+9CshTeiiUyYNQ2ARmlxcuQtaH3RQ9E3ZL3QQ/bRpYz8YvY8pL5IAAAA=",
-      "title": "Hc monogram 1987",
-      "alt": "Berberinn Bornova – Hc monogram 1987"
+      "title": "HÇ · Since 1987",
+      "alt": "Hakan Çetinkaya 1987 modern erkeğin klasik berberi – Berberinn Bornova İzmir"
     },
     {
       "type": "image",
@@ -103,14 +103,14 @@ window.BERBERINN_MEDIA = {
       "height": 2000,
       "orientation": "portrait",
       "lqip": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwBQCdASoYAB4APu1qq0+ppiOiMBgIATAdiWUAzjgNZ+tzzuj/lQjsdKC0zpjP4tXRA+Jsd1AA9ZBNvkr4FclEzwxPZBBp+M/xqq23ifoeq/NFY+uFbmUmJLUuWtd6rk3IqL/+jFLSj3HYWj/6rXgspR/iZ8Fi4+6XT6dhZWSrkvVmfkNEivUfXTQrAAAA",
-      "title": "Koltuktan kare",
-      "alt": "Berberinn Bornova – Koltuktan kare"
+      "title": "Koltuktan Kare",
+      "alt": "Bornova erkek kuaförü Hakan Çetinkaya saç kesimi anı – Berberinn İzmir"
     },
     {
       "type": "video",
       "src": "media/clips/02-sakal-tirasi.mp4?v=mwnfvz5u",
       "poster": "media/clips/02-sakal-tirasi.webp?v=mwnfvz5u",
-      "title": "Sakal tirasi",
+      "title": "Sakal Tıraşı",
       "tag": "Video",
       "orientation": "portrait"
     },
@@ -122,8 +122,8 @@ window.BERBERINN_MEDIA = {
       "height": 1125,
       "orientation": "landscape",
       "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQBACdASoYABAAPu1kq04ppaQiMAgBMB2JYwDIt8ABp2pzxRhWoqaMOOOAAP7UNm4JjVlxTgx+41A4Z/0dG7Xl5sXaTUe5RVxPF5QsRu3wfT1e9S5WZ2DYhwYIAA==",
-      "title": "Modern stil",
-      "alt": "Berberinn Bornova – Modern stil"
+      "title": "Modern Stil",
+      "alt": "Bornova modern saç kesimi, taper fade ve erkek bakım – Berberinn İzmir"
     },
     {
       "type": "image",
@@ -133,14 +133,14 @@ window.BERBERINN_MEDIA = {
       "height": 552,
       "orientation": "square",
       "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQBACdASoYABgAPu1sqk6ppqOiMBgIATAdiWMAs4AMHUBB0nuAbzrm6LyeF1SPwAD90WYyDIfl1xQ2JpC4J1QCVJcta9NSevpHFB5K3OIMOqi34u3amO0Z6AeDrbLx98uGppAA",
-      "title": "Usta hakan portre",
-      "alt": "Berberinn Bornova – Usta hakan portre"
+      "title": "Usta Hakan Çetinkaya",
+      "alt": "Usta Hakan Çetinkaya – Bornova İzmir tavsiye edilen erkek kuaförü ve berber"
     },
     {
       "type": "video",
       "src": "media/clips/03-sakal-tasarimi.mp4?v=mwnfvz5u",
       "poster": "media/clips/03-sakal-tasarimi.webp?v=mwnfvz5u",
-      "title": "Sakal tasarimi",
+      "title": "Sakal Tasarımı",
       "tag": "Video",
       "orientation": "landscape"
     },
